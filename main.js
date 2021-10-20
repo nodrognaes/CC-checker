@@ -48,5 +48,37 @@ const findValidCards = (arr) => {
     return invalidCards;
 };
 
+const idInvalidCardCompanies = (arr) => {
+  let companies = [];
+  for (let i = 0; i < arr.length; i++) {
+    switch (arr[i][0]) {
+      case 3:
+        if (companies.indexOf('Amex') === -1) {
+          companies.push('Amex');
+        }
+        break
+      case 4:
+        if (companies.indexOf('Visa') === -1) {
+          companies.push('Visa');
+        }
+        break
+      case 5:
+        if (companies.indexOf('Mastercard') === -1) {
+          companies.push('Mastercard');
+        }
+        break
+      case 6:
+        if (companies.indexOf('Discover') === -1) {
+          companies.push('Discover');
+        }
+        break
+      default:
+        console.log('Company not found');
+    };
+  };
+  return companies;
+}
 
+//Log list of companies issuing invalid credit cards
+console.log(idInvalidCardCompanies(batch));
 
